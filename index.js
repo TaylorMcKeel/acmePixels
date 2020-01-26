@@ -20,6 +20,33 @@ const colorGrid = (arr)=>{
 }
 
 const colorList = document.querySelector('.colors')
+const gridBox = document.querySelector('.grid');
+const form = document.querySelector('form')
+const create = document.querySelector('button')
+
+
+const createGrid = () => {
+    const width = form.querySelector('[name="width"]')
+    const height = form.querySelector('[name= "height"]')
+    console.log(width, height)
+    let grid =[]
+ 
+    for(let i=0;i<height.value;i++){
+        let row =[]
+        for(let j=0;j<width.value;j++){
+            row.push(`<div class="gridBox" style= "width: calc(100%/${width.value})"></div>`)
+        }
+        grid.push(row.join(''))
+    }
+
+    gridBox.innerHTML = grid.join('')
+}
+createGrid()
+
+create.addEventListener('click',(ev)=>{
+    ev.preventDefault()
+    createGrid()
+})
 
 
 const renderColors = () =>{

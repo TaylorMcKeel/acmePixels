@@ -50,6 +50,7 @@ div{
 .grid{
     height: 80vh;
     margin: 5px 10px;
+    flex-wrap: wrap;
 }   
 
 input, button{
@@ -60,4 +61,9 @@ input, button{
     width: 1rem;
     height: 1rem;
     border: 0.5px solid black;
+}
+
+.gridBox{
+   
+    border: 1px solid black;
 }
